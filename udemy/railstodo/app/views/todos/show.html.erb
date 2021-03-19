@@ -1,0 +1,26 @@
+<div class="panel">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>タイトル:</strong>
+    <%= @todo.title %>
+  </p>
+
+  <p>
+    <strong>本文:</strong>
+    <%= @todo.body %>
+  </p>
+
+  <p>
+    <strong>状態:</strong>
+    <%= @todo.status %>
+  </p>
+
+  <p>
+    <strong>優先度:</strong>
+    <%= @todo.priority %>
+  </p>
+
+  <%= link_to '編集', edit_todo_path(@todo) %> |
+  <%= link_to '戻る', todos_path %>
+</div>

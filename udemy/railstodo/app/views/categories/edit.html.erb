@@ -1,0 +1,8 @@
+<h1>カテゴリを編集する</h1>
+
+<%= render 'form', category: @category %>
+
+<div class="navigations">
+  <%= link_to '見る', @category %> |
+  <%= link_to '戻る', categories_path %>
+</div>
