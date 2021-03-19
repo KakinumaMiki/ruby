@@ -20,11 +20,11 @@ end
 
 # - 2-3. イテレータを使用し、4以下の値の合計値を出力してみよう。
 puts '2-3 4以下の合計'
-even_sum = 0
+sum = 0
 nums.each do |num|
   if num <= 4
     # puts "num: #{num}"
-    even_sum += num
+    sum += num
   end
 end
-puts even_sum
+puts sum

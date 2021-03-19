@@ -12,7 +12,7 @@ fruits = [
 puts '4-1 300以上のnameの出力'
 fruits.each do |fruit|
   if fruit[:price] >= 300
-  puts fruit[:name]
+    puts fruit[:name]
   end
 end
 

@@ -14,6 +14,7 @@ end
 puts '3-2 RubyとPHPのみ出力'
 dev_lang.each do |s|
   if s == 'Ruby' or s == 'PHP'
+  # if s == 'Ruby' || s == 'PHP'
     puts s
   end
 end
