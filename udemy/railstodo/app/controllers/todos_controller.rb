@@ -4,7 +4,9 @@ class TodosController < ApplicationController
   # GET /todos or /todos.json
   def index
     @todos = Todo.where(status: 0).order('priority DESC').page params[:page]
-    # @todos = Todo.all
+    # @todos = Todo.all.page params[:page]
+    @Done = Todo.where(status: 1).order('priority DESC')
+    @now = Time.now.to_s(:db)
   end
 
   # GET /todos/1 or /todos/1.json

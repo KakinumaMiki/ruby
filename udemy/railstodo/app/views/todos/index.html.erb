@@ -2,3 +2,34 @@
 
 <h1>Todo一覧</h1>
 <%= render partial: 'todos_table', locals: { todos: @todos } %>
+
+<h2>完了Todo一覧</h2>
+<table>
+  <thead>
+  <tr>
+    <th>タイトル</th>
+    <th>本文</th>
+    <th>状態</th>
+    <th>優先度</th>
+    <th>カテゴリ</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @Done.each do |done| %>
+    <tr>
+      <td>
+        <%= link_to done do %>
+          <%= done.title %>
+        <% end %>
+      </td>
+      <td><%= done.body %></td>
+      <td><%= done.status %></td>
+      <td><%= done.priority %></td>
+      <td><%= done.category.try(:name) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<p>今の時刻は：<%= @now %></p>
