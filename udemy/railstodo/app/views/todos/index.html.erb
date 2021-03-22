@@ -12,6 +12,7 @@
     <th>状態</th>
     <th>優先度</th>
     <th>カテゴリ</th>
+    <th>完了日</th>
   </tr>
   </thead>
 
@@ -27,9 +28,8 @@
       <td><%= done.status %></td>
       <td><%= done.priority %></td>
       <td><%= done.category.try(:name) %></td>
+      <td><%= done.done_time.strftime('%Y年%m月%d日') %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
-
-<p>今の時刻は：<%= @now %></p>
