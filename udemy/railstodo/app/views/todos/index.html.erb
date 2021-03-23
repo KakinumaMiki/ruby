@@ -17,7 +17,7 @@
   </thead>
 
   <tbody>
-  <% @Done.each do |done| %>
+  <% @completed_tasks.each do |done| %>
     <tr>
       <td>
         <%= link_to done do %>
@@ -28,7 +28,7 @@
       <td><%= done.status %></td>
       <td><%= done.priority %></td>
       <td><%= done.category.try(:name) %></td>
-      <td><%= done.done_time.strftime('%Y年%m月%d日') %></td>
+      <td><%= done.completion_date.strftime('%Y年%m月%d日') %></td>
     </tr>
   <% end %>
   </tbody>

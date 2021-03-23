@@ -5,7 +5,7 @@ class TodosController < ApplicationController
   def index
     @todos = Todo.where(status: 0).order('priority DESC').page params[:page]
     # @todos = Todo.all.page params[:page]
-    @Done = Todo.where(status: 1).order('priority DESC')
+    @completed_tasks = Todo.where(status: 1).order('priority DESC')
   end
 
   # GET /todos/1 or /todos/1.json
@@ -51,7 +51,7 @@ class TodosController < ApplicationController
 
   def status
     @todo.status = params[:status]
-    @todo.done_time = Time.now
+    @todo.completion_date = Time.now
     @todo.save!
     redirect_to root_url, notice: "「#{@todo.title}」が完了しました"
   end

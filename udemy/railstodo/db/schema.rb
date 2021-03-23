@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2021_03_22_072810) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "priority", default: 0, null: false
     t.integer "category_id"
-    t.datetime "done_time"
+    t.datetime "completion_date"
   end
 
 end
