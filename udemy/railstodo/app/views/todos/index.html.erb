@@ -17,18 +17,18 @@
   </thead>
 
   <tbody>
-  <% @completed_tasks.each do |done| %>
+  <% @completed_tasks.each do |task| %>
     <tr>
       <td>
-        <%= link_to done do %>
-          <%= done.title %>
+        <%= link_to task do %>
+          <%= task.title %>
         <% end %>
       </td>
-      <td><%= done.body %></td>
-      <td><%= done.status %></td>
-      <td><%= done.priority %></td>
-      <td><%= done.category.try(:name) %></td>
-      <td><%= done.completion_date.strftime('%Y年%m月%d日') %></td>
+      <td><%= task.body %></td>
+      <td><%= task.status %></td>
+      <td><%= task.priority %></td>
+      <td><%= task.category.try(:name) %></td>
+      <td><%= task.completion_date.strftime('%Y年%m月%d日') %></td>
     </tr>
   <% end %>
   </tbody>
