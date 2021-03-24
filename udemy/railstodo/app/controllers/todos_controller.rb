@@ -51,7 +51,7 @@ class TodosController < ApplicationController
 
   def status
     @todo.status = params[:status]
-    @todo.completion_date = Time.now
+    @todo.completion_date = Time.zone.now
     @todo.save!
     redirect_to root_url, notice: "「#{@todo.title}」が完了しました"
   end
