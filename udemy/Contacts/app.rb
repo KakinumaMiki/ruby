@@ -13,7 +13,7 @@ end
 
 get '/' do
   @now = Time.now
-  @contacts = Contact.all
+  @contacts = Contact.where.not(email: [nil, ''])
   @message = session.delete :message
   erb :index
 end
@@ -29,7 +29,7 @@ post '/contacts' do
   name = params[:name]
 
   # DBに保存
-  @contact = Contact.new({name: name, email: params[:email]})
+  @contact = Contact.new({name: name, email: params[:email], phone: params[:phone]})
   if @contact.save
     # ture
     session[:message] = "#{name}さんを作成しました"
